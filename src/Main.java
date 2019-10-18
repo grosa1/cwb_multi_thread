@@ -44,6 +44,8 @@ public class Main {
                 }
             });
         }
+
+        threadPool.shutdown();
     }
 
     public static String[] getCommands(String userPath, String propPath) {
