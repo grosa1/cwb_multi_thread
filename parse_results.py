@@ -17,8 +17,8 @@ with open(os.path.join(parent_f, 'cwb_result.csv'), 'w') as out_file:
                 current_rule = filename[2][1:]
                 current_user = filename[1][1:]
 
-                expected_result = 'TRUE' if current_rule in current_user else 'FALSE'
-                check = 'OK' if current_result in expected_result else 'ERROR'
+                expected_result = 'TRUE' if current_rule == current_user else 'FALSE'
+                check = 'OK' if current_result == expected_result else 'ERROR'
 
                 out_file.write(current_rule + ',' + current_user + ',' + expected_result + ',' + current_result + ',' + check + '\n')
 
