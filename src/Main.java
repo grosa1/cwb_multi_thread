@@ -11,14 +11,14 @@ public class Main {
         final Logger logger =  Logger.getLogger(Main.class.getName());
 
         if (Arrays.asList(args).contains("--help")) {
-            System.out.println("USAGE: java -jar cwb-runner.jar <cwb path> <working dir> <max thread count> <data folder>");
+            System.out.println("USAGE: java -jar cwb-runner.jar <cwb path> <data folder> <max thread count>");
             return;
         }
 
         final String cwbPath = args[0];
         final String workingDir = args[1];
+        final String dataFolder = args[1];
         int poolSize = Integer.parseInt(args[2]);
-        String dataFolder = args[3];
 
         List<String> users = loadFiles(new File(dataFolder), ".ccs");
         List<String> props = loadFiles(new File(dataFolder), ".mu");
