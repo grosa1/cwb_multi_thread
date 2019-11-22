@@ -21,9 +21,9 @@ public class CwbProcess {
     public boolean run(String workingDir, String[] commandsToRun, String resultString) throws IOException {
         File logFile;
         try {
-            String currentUser = commandsToRun[0].substring(commandsToRun[0].lastIndexOf("_") + 1, commandsToRun[0].lastIndexOf("."));
-            String currentRule = commandsToRun[1].substring(commandsToRun[1].lastIndexOf("_") + 1, commandsToRun[1].lastIndexOf("."));
-            logFile = Paths.get(workingDir, "log_u" + currentUser + "_r" + currentRule + ".txt").toFile();
+            String currentUser = commandsToRun[0].substring(commandsToRun[0].lastIndexOf("/") + 1, commandsToRun[0].lastIndexOf("."));
+            String currentRule = commandsToRun[1].substring(commandsToRun[1].lastIndexOf("/") + 1, commandsToRun[1].lastIndexOf("."));
+            logFile = Paths.get(workingDir, "log_u_" + currentUser + "_r_" + currentRule + ".txt").toFile();
 
             ProcessBuilder pb = new ProcessBuilder(this.cwbPath, "ccs");
             pb.directory(new File(workingDir));
